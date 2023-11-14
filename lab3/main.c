@@ -50,15 +50,18 @@ int main() {
 		
 		
 		LPC_UART0->LCR = 3;*/
-		LPC_SC->PCONP |= 1<<24;
+	
+	
+	
+		LPC_SC->PCONP |= 1<<24; // UART 2(???) power/clock control bit.
 		
-		PIN_Configure(0,2,1,2,0);
-		PIN_Configure(0,3,1,2,0);
+		PIN_Configure(0,2,1,2,0); // 0 - port num. 2 - pin num. 1 - pin fun. 2 - input mode. 0 - open drain
+		PIN_Configure(0,3,1,2,0); // na 2 pozycji 2 i 3 
 	
 		// USARTdrv1->Receive(&cmd,1);
 		// delay(100);
 
-		LPC_UART0->LCR = 3 | (1<<7);
+		LPC_UART0->LCR = 3 | (1<<7); // 3 - ozn. 8bit slowo, 1<<7 - Enable acces to Divisor Latches
 		LPC_UART0->DLL = 27; // dzielnik peryferyjny 2, 256 max
 		LPC_UART0->DLM = 0; // tu naddatek x*256
 		
@@ -67,7 +70,7 @@ int main() {
 		
 		// USARTdrv3->Send("\nHello World!", 12);
 		// USARTdrv1->Send("\nHello World!", 12);
-	const char  napis[] = "123456789012345678912345678123456712345\n";
+		const char  napis[] = "123456789012345678912345678123456712345\n";
 		char reciveByte;
 		while(1)
 		{
