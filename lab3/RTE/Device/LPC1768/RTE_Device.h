@@ -593,7 +593,7 @@
 //     </e>
 
 // <e> UART3 (Universal asynchronous receiver transmitter)
-#define RTE_UART3                       1
+#define RTE_UART3                       0
 
 //   <o> UART3_TX Pin <0=>Not used <1=>P0_0 <2=>P0_25 <3=>P4_28
 //   <i> UART3 Serial Output pin

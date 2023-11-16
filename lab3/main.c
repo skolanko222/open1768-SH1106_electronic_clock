@@ -83,7 +83,7 @@ int main() {
 			
 			
 			
-			/*for(int i = 0; i < sizeof(napis) ; i++){
+			for(int i = 0; i < sizeof(napis) ; i++){
 				
 				if(LPC_UART0->LSR >> 6 == 1){
 				LPC_UART0->THR = napis[i];
@@ -92,7 +92,7 @@ int main() {
 					i--;
 				}
 			}
-			delay(100);*/
+			delay(100);
 		}
 	
 	return 0;
