@@ -14,7 +14,7 @@ void TIMER0_IRQHandler(void){
 					i--;
 				}
 			}
-		LPC_TIM0->IR = 1;
+		LPC_TIM0->IR = 1; // reset the interrupt
 }
 void RTC_IRQHandler(void){
 	const char * n1 = "Tik\n";
@@ -51,7 +51,8 @@ int main() {
 	
 		PIN_Configure(0,2,1,2,0);
 		PIN_Configure(0,3,1,2,0);
-	
+		
+
 
 		LPC_UART0->LCR = 3 | (1<<7);
 		LPC_UART0->DLL = 27; // dzielnik peryferyjny 2, 256 max
@@ -62,11 +63,14 @@ int main() {
 		LPC_UART0->LCR = 3;
 	
 	
-		LPC_TIM0->PR = 0;
+		LPC_TIM0->PR = 0; // Prescale Register - when PR == PC -> increments TC (Timer Counter) and resets PC
 		LPC_TIM0->MCR = 3;
+		// 1st bit - interrupt, when TC == MR0
+		// 2nd bit - resets TC, when TC == MR0
 		LPC_TIM0->MR0 = 12500000;
-		LPC_TIM0->TCR = 1;
-		
+		LPC_TIM0->TCR = 1; // enables PC & TC for count
+			
+
 		//RTC
 		LPC_RTC->CCR = 1;
 		LPC_RTC->ILR = 1;
