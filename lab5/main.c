@@ -166,8 +166,9 @@ int main() {
 		LED_Off(3);
 	
 	
-		PIN_Configure(0,2,1,2,0);
+		PIN_Configure(0,2,1,2,0); // funkcja 1, mode 2 (brak pull up/down)
 		PIN_Configure(0,3,1,2,0);
+		//usart
 		LPC_UART0->LCR = 3 | (1<<7);
 		LPC_UART0->DLL = 27; // dzielnik peryferyjny 2, 256 max
 		LPC_UART0->DLM = 0; // tu naddatek x*256
@@ -192,11 +193,12 @@ int main() {
 		LPC_SC->EXTMODE = 1; // zbocze
 		LPC_SC->EXTPOLAR =  0; // falling-edge
 		LPC_SC->EXTINT = 1; // interrupt
+		
 		PIN_Configure(2,10,1,0,0); // primary function, pull-up, no drain (pull up by trzymal logicznie 1 jak key odlaczony)
 		
 		//dotykowy
-		LPC_GPIOINT->IO0IntEnF = (1<<19);
-		PIN_Configure(0,19,1,0,0);
+		LPC_GPIOINT->IO0IntEnF = (1<<19); // ze schematu wiemy, ze przerwanie z LCD przychodzi na P0.19
+		PIN_Configure(0,19,1,0,0); // fun 1, pull up wlaczony??
 		
 	
 		
@@ -207,7 +209,6 @@ int main() {
 		
 		
 		//led
-		
 		lcdConfiguration();
 		init_ILI9325();
 
