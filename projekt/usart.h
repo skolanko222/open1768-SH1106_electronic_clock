@@ -15,16 +15,3 @@ void usartConfigure(){
 
 }
 
-void tempPrint(const char * napis)
-{
-		//strcat(napis,"\r");
-		for(int i = 0; i < strlen(napis);i++){
-				
-				if(LPC_UART0->LSR >> 6 == 1){
-				LPC_UART0->THR = napis[i];
-				}
-				else{
-					i--;
-				}
-			}
-}
