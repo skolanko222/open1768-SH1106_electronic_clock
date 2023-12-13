@@ -14,7 +14,22 @@ void tempPrint(const char * napis);
 
 void RTC_Configuration(void);
 
+volatile uint32_t msTicks = 0;
+
+void delay(int t) //ms
+{
+	msTicks = 0;
+	while(t> msTicks);
+}
+void SysTick_Handler(void)
+{
+	msTicks++;
+}
+
 int main(){
+	
+	//SysTick
+	SysTick_Config((SystemCoreClock / 1000) - 1); // 1000 tick/sec - 1ms
 	
 	//usart
 	USART_Configuration();
@@ -97,7 +112,6 @@ void USART_Configuration(void){
 		LPC_UART0->FCR = 6;
 		LPC_UART0->LCR = 3;
 }
-
 
 void tempPrint(const char * napis)
 {
