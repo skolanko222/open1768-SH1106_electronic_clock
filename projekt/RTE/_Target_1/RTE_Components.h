@@ -16,6 +16,8 @@
  */
 #define CMSIS_device_header "LPC17xx.h"
 
+/* Keil::CMSIS Driver:SPI:SPI:2.2.0 */
+#define RTE_Drivers_SPI2                /* Driver SPI2 */
 /* Keil::CMSIS Driver:USART:2.10.0 */
 #define RTE_Drivers_USART0              /* Driver USART0 */
         #define RTE_Drivers_USART1              /* Driver USART1 */

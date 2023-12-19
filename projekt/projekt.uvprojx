@@ -390,6 +390,31 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>spi_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\spi_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>rtc_timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\rtc_timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usart0.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\OLED_driver.h</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SysTick.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -443,6 +468,12 @@
         </targetInfos>
       </component>
       <component Capiversion="1.0.0" Cbundle="Open1768" Cclass="Board Support" Cgroup="Buttons" Cvendor="Keil" Cversion="1.0.0" condition="LPC1700 CMSIS PIN GPIO">
+        <package name="LPC1700_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.6.1"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="SPI" Csub="SPI" Cvendor="Keil" Cversion="2.2.0" condition="LPC1700 CMSIS PIN GPIO">
         <package name="LPC1700_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.6.1"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
