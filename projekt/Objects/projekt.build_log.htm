@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.38.0.0
 Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Szymon Kolanko, none, LIC=----
+License Information: Szymon Kolanko, Acer, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.38.0.0
@@ -21,12 +21,18 @@ Target DLL:      UL2CM3.DLL V1.164.8.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
+<<<<<<< HEAD
 C:\Users\Dell\Documents\systemy_wbudowane\projekt\projekt.uvprojx
 Project File Date:  12/23/2023
+=======
+C:\Users\User\Documents\systemy_wbudowane\projekt\projekt.uvprojx
+Project File Date:  12/21/2023
+>>>>>>> 7663c1a9506292e7812887afa15539cc5daba4ec
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
+<<<<<<< HEAD
 compiling GPIO_LPC17xx.c...
 compiling GPDMA_LPC17xx.c...
 compiling SPI_LPC17xx.c...
@@ -37,6 +43,17 @@ compiling main.c...
 compiling Joystick_Open1768.c...
 compiling Buttons_Open1768.c...
 compiling PIN_LPC17xx.c...
+=======
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling GPIO_LPC17xx.c...
+compiling PIN_LPC17xx.c...
+compiling Buttons_Open1768.c...
+compiling GPDMA_LPC17xx.c...
+compiling SPI_LPC17xx.c...
+compiling main.c...
+compiling UART_LPC17xx.c...
+>>>>>>> 7663c1a9506292e7812887afa15539cc5daba4ec
 linking...
 Program Size: Code=8034 RO-data=338 RW-data=3720 ZI-data=1928  
 ".\Objects\projekt.axf" - 0 Error(s), 0 Warning(s).
@@ -75,11 +92,11 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   ./RTE/Device/LPC1768
   ./RTE/_Target_1
-  C:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  C:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include
-  C:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include
-  C:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver
-  C:/Users/Dell/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board
+  C:/Users/User/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/User/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include
+  C:/Users/User/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include
+  C:/Users/User/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver
+  C:/Users/User/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board
 
 <h2>Collection of Component Files used:</h2>
 
@@ -114,8 +131,8 @@ Package Vendor: Keil
       Source file:   RTE_Driver/UART_LPC17xx.c
 
    * Component: Keil::Device:GPDMA:1.2.0
-      Include file:  RTE_Driver/GPDMA_LPC17xx.h
       Source file:   RTE_Driver/GPDMA_LPC17xx.c
+      Include file:  RTE_Driver/GPDMA_LPC17xx.h
 
    * Component: Keil::Device:GPIO:1.1.0
       Source file:   RTE_Driver/GPIO_LPC17xx.c
@@ -126,11 +143,19 @@ Package Vendor: Keil
       Source file:   RTE_Driver/PIN_LPC17xx.c
 
    * Component: Keil::Device:Startup:1.0.0
+<<<<<<< HEAD
       Source file:   Device/Source/ARM/startup_LPC17xx.s
       Source file:   Device/Source/system_LPC17xx.c
       Include file:  RTE_Driver/Config/RTE_Device.h
       Include file:  Device/Include/LPC17xx.h
 Build Time Elapsed:  00:00:03
+=======
+      Source file:   Device/Source/system_LPC17xx.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Include file:  Device/Include/LPC17xx.h
+      Source file:   Device/Source/ARM/startup_LPC17xx.s
+Build Time Elapsed:  00:00:00
+>>>>>>> 7663c1a9506292e7812887afa15539cc5daba4ec
 </pre>
 </body>
 </html>
