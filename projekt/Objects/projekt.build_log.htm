@@ -22,14 +22,23 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\Users\Dell\Documents\systemy_wbudowane\projekt\projekt.uvprojx
-Project File Date:  12/18/2023
+Project File Date:  12/23/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Target 1'
+Rebuild target 'Target 1'
+compiling GPIO_LPC17xx.c...
+compiling GPDMA_LPC17xx.c...
+compiling SPI_LPC17xx.c...
+assembling startup_LPC17xx.s...
+compiling UART_LPC17xx.c...
+compiling system_LPC17xx.c...
 compiling main.c...
+compiling Joystick_Open1768.c...
+compiling Buttons_Open1768.c...
+compiling PIN_LPC17xx.c...
 linking...
-Program Size: Code=6280 RO-data=312 RW-data=8 ZI-data=1912  
+Program Size: Code=8034 RO-data=338 RW-data=3720 ZI-data=1928  
 ".\Objects\projekt.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -48,6 +57,7 @@ Package Vendor: Keil
                 Keil.LPC1700_DFP.2.6.1
                 NXP LPC1700 Series Device Support, Drivers and Examples for MCB1700, Open1768 and LPC1788-32
    * Component: Buttons Version: 1.0.0
+   * Component: Joystick Version: 1.0.0
    * Component: SPI Version: 2.2.0
    * Component: USART Version: 2.10.0
    * Component: GPDMA Version: 1.2.0
@@ -60,6 +70,7 @@ Package Vendor: Keil
                 Keil.MDK-Middleware.7.16.0
                 Middleware for Keil MDK-Professional and MDK-Plus
    * Component: Buttons Version: 1.0.0
+   * Component: Joystick Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/Device/LPC1768
@@ -74,6 +85,9 @@ Package Vendor: Keil
 
    * Component: ::Board Support:Buttons:1.0.0 (API)
       Include file:  Board/Board_Buttons.h
+
+   * Component: ::Board Support:Joystick:1.0.0 (API)
+      Include file:  Board/Board_Joystick.h
 
    * Component: ::CMSIS Driver:SPI:2.3.0 (API)
       Include file:  CMSIS/Driver/Include/Driver_SPI.h
@@ -90,6 +104,9 @@ Package Vendor: Keil
    * Component: Keil.Open1768::Board Support:Buttons:1.0.0
       Source file:   Boards/Waveshare/Open1768/Common/Buttons_Open1768.c
 
+   * Component: Keil.Open1768::Board Support:Joystick:1.0.0
+      Source file:   Boards/Waveshare/Open1768/Common/Joystick_Open1768.c
+
    * Component: Keil::CMSIS Driver:SPI:SPI:2.2.0
       Source file:   RTE_Driver/SPI_LPC17xx.c
 
@@ -101,19 +118,19 @@ Package Vendor: Keil
       Source file:   RTE_Driver/GPDMA_LPC17xx.c
 
    * Component: Keil::Device:GPIO:1.1.0
-      Include file:  RTE_Driver/GPIO_LPC17xx.h
       Source file:   RTE_Driver/GPIO_LPC17xx.c
+      Include file:  RTE_Driver/GPIO_LPC17xx.h
 
    * Component: Keil::Device:PIN:1.0.0
-      Source file:   RTE_Driver/PIN_LPC17xx.c
       Include file:  RTE_Driver/PIN_LPC17xx.h
+      Source file:   RTE_Driver/PIN_LPC17xx.c
 
    * Component: Keil::Device:Startup:1.0.0
-      Include file:  Device/Include/LPC17xx.h
-      Source file:   Device/Source/system_LPC17xx.c
       Source file:   Device/Source/ARM/startup_LPC17xx.s
+      Source file:   Device/Source/system_LPC17xx.c
       Include file:  RTE_Driver/Config/RTE_Device.h
-Build Time Elapsed:  00:00:01
+      Include file:  Device/Include/LPC17xx.h
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

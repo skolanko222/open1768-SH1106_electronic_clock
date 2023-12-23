@@ -1,6 +1,6 @@
 Dependencies for Project 'projekt', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\main.c)(0x6580662F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board-D__UVISION_VERSION="538" -D_RTE_ -DLPC175x_6x -D_RTE_-o ./objects/main.o -MD)
+F (.\main.c)(0x6584603F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board-D__UVISION_VERSION="538" -D_RTE_ -DLPC175x_6x -D_RTE_-o ./objects/main.o -MD)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\Device\Include\LPC17xx.h)(0x58493F92)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F9F3E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63889D68)
@@ -14,18 +14,21 @@ I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Driver\Include\Dr
 I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Driver\Include\Driver_Common.h)(0x626F9F3E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x63889D68)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63889D68)
-I (spi_config.h)(0x65806278)
-I (rtc_timer.h)(0x65805ED3)
-I (usart0.h)(0x65806283)
+I (image.h)(0x65845BFF)
+I (spi_config.h)(0x658458A3)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\PIN_LPC17xx.h)(0x5D5BD5BA)
+I (rtc_timer.h)(0x65844307)
+I (usart0.h)(0x65844308)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63889D68)
-I (OLED_driver.h)(0x65806629)
-I (SysTick.h)(0x6580620F)
-F (.\spi_config.h)(0x65806278)()
-F (.\rtc_timer.h)(0x65805ED3)()
-F (.\usart0.h)(0x65806283)()
-F (.\OLED_driver.h)(0x65806629)()
-F (.\SysTick.h)(0x6580620F)()
+I (OLED_driver.h)(0x65844307)
+I (SysTick.h)(0x65844307)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.16.0\Board\Board_Joystick.h)(0x5D1455AA)
+F (.\spi_config.h)(0x658458A3)()
+F (.\rtc_timer.h)(0x65844307)()
+F (.\usart0.h)(0x65844308)()
+F (.\OLED_driver.h)(0x65844307)()
+F (.\SysTick.h)(0x65844307)()
+F (.\image.h)(0x65845BFF)()
 F (C:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Boards/Waveshare/Open1768/Common/Buttons_Open1768.c)(0x5D921BE4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board-D__UVISION_VERSION="538" -D_RTE_ -DLPC175x_6x -D_RTE_-o ./objects/buttons_open1768.o -MD)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\Device\Include\LPC17xx.h)(0x58493F92)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F9F3E)
@@ -39,6 +42,19 @@ I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\PIN_L
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63889D68)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\GPIO_LPC17xx.h)(0x5D5BD5BA)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.16.0\Board\Board_Buttons.h)(0x5D1455AA)
+F (C:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Boards/Waveshare/Open1768/Common/Joystick_Open1768.c)(0x5D92FC7A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board-D__UVISION_VERSION="538" -D_RTE_ -DLPC175x_6x -D_RTE_-o ./objects/joystick_open1768.o -MD)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\Device\Include\LPC17xx.h)(0x58493F92)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F9F3E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63889D68)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F9F3E)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F9F3E)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F9F3E)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F9F3E)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\PIN_LPC17xx.h)(0x5D5BD5BA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63889D68)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\GPIO_LPC17xx.h)(0x5D5BD5BA)
+I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.16.0\Board\Board_Joystick.h)(0x5D1455AA)
 F (C:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver/SPI_LPC17xx.c)(0x5D5BD5BA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/LPC1768-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Driver/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/Device/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/LPC1700_DFP/2.6.1/RTE_Driver-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.16.0/Board-D__UVISION_VERSION="538" -D_RTE_ -DLPC175x_6x -D_RTE_-o ./objects/spi_lpc17xx.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63889D68)
 I (C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\SPI_LPC17xx.h)(0x5D5BD5BA)
