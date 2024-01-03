@@ -12,7 +12,7 @@
   C:\Users\User\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Driver\Include\Driver_Common.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h image.h spi_config.h \
-  C:\Users\Dell\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\PIN_LPC17xx.h \
+  C:\Users\User\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.1\RTE_Driver\PIN_LPC17xx.h \
   rtc_timer.h usart0.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   OLED_driver.h SysTick.h \
-  C:\Users\Dell\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.16.0\Board\Board_Joystick.h
+  C:\Users\User\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.16.0\Board\Board_Joystick.h

@@ -19,6 +19,9 @@
 	{
 		msTicks++;
 	}
+	int SysTick_Get(){
+		return msTicks;
+	}
 #else
 	
 #endif

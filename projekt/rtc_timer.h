@@ -4,6 +4,11 @@
 void RTC_IRQHandler(void);
 void RTC_Configuration(void);
 
+extern uint64_t epoch;
+
+#define disableRTC NVIC_DisableIRQ(RTC_IRQn);
+#define enableRTC  NVIC_EnableIRQ(RTC_IRQn);
+
 
 void RTC_Configuration(void){
 	LPC_RTC->CCR = 1;
@@ -30,7 +35,7 @@ void RTC_IRQHandler(void){
 	}
 	
 	tempPrint(napis);
-	//sendSSP(100);
+	epoch++;
 	LPC_RTC->ILR = 1;
 
 }
