@@ -1,7 +1,7 @@
 #include "LPC17xx.h"
 #include "PIN_LPC17xx.h"
-#include "string.h"
-
+#include <stdio.h>
+#include <string.h>
 void tempPrint(const char * napis);
 void USART_Configuration(void);
 
@@ -29,4 +29,11 @@ void tempPrint(const char * napis)
 					i--;
 				}
 			}
+}
+
+void tempPrintInt(int liczba)
+{
+    char napis[10];
+    sprintf(napis,"%d",liczba);
+    tempPrint(napis);
 }

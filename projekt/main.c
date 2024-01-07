@@ -35,6 +35,7 @@ int main(){
 	
 	//RTC
 	RTC_Configuration();
+	readDataTime();
 	
 	//SPI Lib
 	SPI_Configuration();
@@ -68,8 +69,7 @@ int main(){
             // W config mode
 					
 						if(flag){
-							disableRTC
-							//tempPrint("huj");
+							disableRTC();							
 						}
 							
 						flag = 0;
@@ -140,9 +140,9 @@ int main(){
 												if(date[currentDigit] == 255){
 													date[currentDigit]=1;/////////////////////////////////////////////// TUTAJ PACZEC
 												}
-												char buf[80];
-												sprintf(buf,"%d",date[currentDigit]);
-												tempPrint(buf);
+												// char buf[80];
+												// sprintf(buf,"%d",date[currentDigit]);
+												// tempPrint(buf);
 										}
 										else if(currentDigit == 3 && date[2] == 1){
                         date[currentDigit] = (date[currentDigit] - 1) % 3;
@@ -196,11 +196,13 @@ int main(){
         } else {
             // W normalnym trybie
 						if(flag){
-							epoch = calc_epoch_from_date(date,time);
-							enableRTC
+							//epoch = calc_epoch_from_date(date,time);
+							disableRTC();
+							setDateTime();
+							enableRTC();
 						}
 						flag = 0;
-						calc_date_form_epoch(epoch,date,time);
+						//calc_date_form_epoch(epoch,date,time);
 					
             if(state == JOYSTICK_CENTER){
                 // Wejdz w config mode

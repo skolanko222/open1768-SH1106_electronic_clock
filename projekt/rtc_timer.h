@@ -5,22 +5,33 @@
 
 void RTC_IRQHandler(void);
 void RTC_Configuration(void);
+void readDataTime();
 
 extern uint64_t epoch;
 extern uint8_t date[8];
 extern uint8_t time[4];
 
-#define disableRTC NVIC_DisableIRQ(RTC_IRQn);
-#define enableRTC  NVIC_EnableIRQ(RTC_IRQn);
 
-
-void RTC_Configuration(void){
+void enableRTC(void){
 	LPC_RTC->CCR = 1;
 	LPC_RTC->ILR = 1;
 	LPC_RTC->CIIR = 1;
 		
 	NVIC_EnableIRQ(RTC_IRQn);
-	
+}
+
+void disableRTC(void){
+	LPC_RTC->CCR = 0;
+	LPC_RTC->ILR = 0;
+	LPC_RTC->CIIR = 0;
+		
+	NVIC_DisableIRQ(RTC_IRQn);
+}
+
+
+void RTC_Configuration(void){
+	enableRTC();
+	readDataTime();	
 }
 
 void RTC_IRQHandler(void){
@@ -42,3 +53,56 @@ void RTC_IRQHandler(void){
 	epoch++;
 	LPC_RTC->ILR = 1;
 }
+
+void readDataTime(){
+	
+	uint8_t min = LPC_RTC->MIN;
+	uint8_t hour = LPC_RTC->HOUR;
+	
+	uint8_t dom = LPC_RTC->DOM;
+	uint8_t month = LPC_RTC->MONTH;
+	uint16_t year = LPC_RTC->YEAR;
+	
+	tempPrintInt(min); tempPrint(" "); tempPrintInt(hour); tempPrint("\r\n");
+	
+	time[0] = hour / 10;
+	time[1] = hour % 10;
+	
+	time[2] = min / 10;
+	time[3] = min % 10;
+	
+	date[0] = dom / 10;
+	date[1] = dom % 10;
+	
+	date[2] = month / 10;
+	date[3] = month % 10;
+	
+	date[7] = year % 10;
+	year /= 10;
+	date[6] = year % 10;
+	year /= 10;
+	date[5] = year % 10;
+	year /= 10;
+	date[4] = year % 10;
+	year /= 10;
+		
+}
+
+void setDateTime(){
+	
+	uint8_t min = time[0]*10 + time[1];
+	uint8_t hour = time[2]*10 + time[3];
+
+	uint8_t dom = date[0]*10 + date[1];	
+	uint8_t month = date[2]*10 + date[3];
+	uint16_t year = date[4]*1000 + date[5]*100 + date[6]*10 + date[7];
+	tempPrintInt(min); tempPrint(" "); tempPrintInt(hour); tempPrint("\r\n");
+		
+	LPC_RTC->MIN = min;
+	LPC_RTC->HOUR = hour;
+
+	LPC_RTC->DOM = dom;
+	LPC_RTC->MONTH = month;
+	LPC_RTC->YEAR = year;
+}
+
