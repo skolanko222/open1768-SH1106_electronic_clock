@@ -4,6 +4,7 @@
 	#define SYSTICK_INCLUDE
 
 	volatile uint32_t msTicks = 0;
+	volatile uint32_t pulseTicks =0;
 
 	void delay(int t);
 
@@ -18,9 +19,10 @@
 	void SysTick_Handler(void)
 	{
 		msTicks++;
+		pulseTicks++;
 	}
 	int SysTick_Get(){
-		return msTicks;
+		return pulseTicks;
 	}
 #else
 	

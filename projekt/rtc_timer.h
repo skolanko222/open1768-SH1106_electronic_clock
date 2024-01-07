@@ -1,10 +1,14 @@
 #include "LPC17xx.h"
 #include "usart0.h"
+#include "epoch.h"
+#include <stdio.h>
 
 void RTC_IRQHandler(void);
 void RTC_Configuration(void);
 
 extern uint64_t epoch;
+extern uint8_t date[8];
+extern uint8_t time[4];
 
 #define disableRTC NVIC_DisableIRQ(RTC_IRQn);
 #define enableRTC  NVIC_EnableIRQ(RTC_IRQn);
@@ -37,5 +41,4 @@ void RTC_IRQHandler(void){
 	tempPrint(napis);
 	epoch++;
 	LPC_RTC->ILR = 1;
-
 }
