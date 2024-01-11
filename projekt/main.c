@@ -20,7 +20,7 @@ unsigned char (*arrayOfTables2[4])[32] = {bigZero,bigZero,bigZero,bigZero};
 uint8_t date[8] = {2,7,1,1,2,0,2,3};
 uint8_t time[4] = {2,1,5,9};
 
-uint64_t epoch;
+//uint64_t epoch;
 
 
 int main(){
@@ -36,6 +36,22 @@ int main(){
 	//RTC
 	RTC_Configuration();
 	readDataTime();
+	if(date[4]>2 && (date[5]>0 || date[6]>2)){
+		date[0] = 3;
+		date[1] = 1;
+		date[2] = 1;
+		date[3] = 2;
+		date[4] = 2;
+		date[5] = 0;
+		date[6] = 2;
+		date[7] = 4;
+		time[0] = 2;
+		time[1] = 3;
+		time[2] = 5;
+		time[3] = 9;
+		setDateTime();
+	}
+
 	
 	//SPI Lib
 	SPI_Configuration();
@@ -56,8 +72,8 @@ int main(){
 	
 	
 	//epoch = 1704380400;
-	epoch = calc_epoch_from_date(date,time);
-	calc_date_form_epoch(epoch,date,time);
+	//epoch = calc_epoch_from_date(date,time);
+	//calc_date_form_epoch(epoch,date,time);
 	
 	char flag = 0;
 
@@ -197,7 +213,6 @@ int main(){
             // W normalnym trybie
 						if(flag){
 							//epoch = calc_epoch_from_date(date,time);
-							disableRTC();
 							setDateTime();
 							enableRTC();
 						}
