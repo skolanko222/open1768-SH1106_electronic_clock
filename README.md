@@ -31,7 +31,9 @@ Celem naszego projektu jest stworzenie elektronicznego zegarka z interfejsem gra
 2. **Konfiguracja UART (opcjonalne):**
    - Interfejs UART należy podłączyć do portu UART0 - wyłącznie w celach diagnostycznych.
    - Konfiguracja terminala szeregowego: baud rate: 115200, długość słowa bitowego: 8 bit, brak parzystości, 1 bit stopu.
-     
+
+![1](https://github.com/skolanko222/systemy_wbudowane/assets/108925571/758ac8e7-8821-4b80-b5d7-f5c3ec3aa62c)
+ 
 ## Sposób Działania
 1. **Uruchomienie Urządzenia:**
    - Po włączeniu urządzenia użytkownik będzie mógł rozpocząć konfigurację zegarka. Aby to zrobić, powinien nacisnąć joystick na płytce.
@@ -45,6 +47,8 @@ Celem naszego projektu jest stworzenie elektronicznego zegarka z interfejsem gra
 
 4. **Zakończenie Konfiguracji:**
    - Po zakończeniu konfiguracji użytkownik powinien ponownie nacisąć joystick, co zapisze wprowadzone ustawienia.
+
+![2](https://github.com/skolanko222/systemy_wbudowane/assets/108925571/3c0d0563-3eb8-428f-93f8-aba53a455723)
 
 ## Elementy opcjonalne
 ### UART
