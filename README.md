@@ -11,7 +11,7 @@ Styczeń 2024
 Celem naszego projektu jest stworzenie elektronicznego zegarka z interfejsem graficznym na wyświetlaczu [1.3inch OLED SH1106](https://www.waveshare.com/wiki/1.3inch_OLED_(A)), który będzie programowany przez interfejs SPI. Zasilanie zegara RTC jest możliwe poprzez zewnętrzną baterię.
 
 ## Komponenty Projektu
-1. **Mikrokontroler LPC1768:**
+1. **Płytka Open1768:**
    - Centralny element sterujący projektem.
    - Odpowiada za obsługę interfejsu SPI i komunikację z wyświetlaczem.
      
@@ -52,19 +52,26 @@ Przy podłączonym interfejsie UART na porcie 0, mikrokontroler komunikuje aktua
 
 ## Wykorzystane Peryferia Mikrokontrolera
 ### Interfejs SPI:
-
-Konfiguracja do komunikacji z wyświetlaczem OLED.
+   - Konfiguracja do komunikacji z wyświetlaczem OLED.
 ### Joystick:
-
-Obsługa do nawigacji po interfejsie.
+   - Obsługa do nawigacji po interfejsie.
 ### RTC:
-
-Wykorzystywane do śledzenia czasu.
-
+   - Wykorzystywane do śledzenia czasu.
 ### UART:
-
+   - Diagnostyka
 (Opcjonalnie) Dane diagnostyczne o działaniu mikrokontrolera.
 
-## Szkic algorytmu
-### Empty
-Empty
+## Szkic najważniejszych funkcji
+1. **OLED_driver.h**
+   - OLED_init() - wysłanie sekwecji inicjalizującej wyświetlacz: reset urządzenia (pin RES), wysłanie rejestrów inicjalizujących parametry wyświetlacza takich jak dzielniki wewnętrzego zegara, ilość cykli zegara potrzebnych do pre-chargu i dischardzu pixeli czy mapowanie pamięci do wyświetlacza.
+   - OLED_writeReg(uint_t data) - wysyła bajt danych przez SPI i powiadamia wyświetlacz, że ma traktować nadchodzące dane jako komendę (pin DC -> 0)
+   - OLED_writeData(uint_t data) - wysyła bajt danych przez SPI i powiadamia wyświetlacz, że ma traktować nadchodzące dane jako obra (pin DC -> 1)
+   - OLED_display(uint_t * image) - wysyła tablicę reprezentującą obraz do wyświetlacza. Tablica jest jednowymiarowa, lecz każde 8 uint'ów (zaczynając od początku tablicy) reprezentuje jeden wiersz pixelów na wyświetlaczu ( 8x8bit = 64bit), zaś każda wartoś 1/0 bitu oznacza zapalenie lub zgaszenie korespondującego pixela.
+W celu zapełnienia całego wyświetlacza, tablica powinna więc przetrzymywać 8*128=1024 uint'ów. 
+2. **image.h**
+   - drawPixel(unsigned char image[1030], int x, int y, char value) - ustawia danych pixel o współrzędnych (x, y) na wartość 1/0, w tablicy reprezentującej obraz wysyłany do wyświetlacza.
+   - drawArray(unsigned char image[1030], int x, int y, int width, int height, unsigned char array[width][height]) - ustawia obszar (prostokąt o wymiarach: width x height, i początku w (x,y)) reprezentowany w tablicy image, który zostanie wyświetlony na ekranie.
+3. **rtc_timer.h**
+   - RTC_Configuration() - konfiguruje Real Time Clock oraz włącza przerwanie zegara/
+   - setDateTime() - zapisuje globalne wartości zegara zapisane przez użytkownika w czasie konfiguracji zegara.
+   - readDataTime() - odczytuje obecną datę i godzinę zawartą w RTC i zapisuje je w wartościach globalnych.
