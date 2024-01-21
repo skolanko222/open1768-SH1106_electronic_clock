@@ -8,7 +8,7 @@
 Styczeń 2024
 
 ## Opis Projektu
-Celem naszego projektu jest stworzenie elektronicznego zegarka z interfejsem graficznym, który będzie programowany przez interfejs SPI.
+Celem naszego projektu jest stworzenie elektronicznego zegarka z interfejsem graficznym na wyświetlaczu [1.3inch OLED SH1106](https://www.waveshare.com/wiki/1.3inch_OLED_(A)), który będzie programowany przez interfejs SPI. Zasilanie zegara RTC jest możliwe poprzez zewnętrzną baterię.
 
 ## Komponenty Projektu
 1. **Mikrokontroler LPC1768:**
@@ -21,7 +21,17 @@ Celem naszego projektu jest stworzenie elektronicznego zegarka z interfejsem gra
      
 3. **Bateria:**
    - Służy do utrzymania funkcji RTC w mikrokontrolerze, gdy płytka odpięta jest od innych rodzajów zasilania.
-
+  
+## Budowa urządzenia
+1. **Podłączenie wyświetlacza OLED:**
+   - Wyswietlacz należy podłączyć do portu SPI1, który znajduje się w lewym dolnym rogu płytki pod portem SSP.
+   - Należy upewnić się, że piny wyświetlacza zostały podłączone do headera SPI wg. schematu: (VCC -> 3.3V, GND - > GND, DIN -> MOSI, CLK -> SCK, CS -> NSS)
+   - Ostatni pin wyświetlacza - RES - który wystaje poza header, należy osobnym kabelkiem podłączyć do pinu P2.0.
+     
+2. **Konfiguracja UART (opcjonalne):**
+   - Interfejs UART należy podłączyć do portu UART0 - wyłącznie w celach diagnostycznych.
+   - Konfiguracja terminala szeregowego: baud rate: 115200, długość słowa bitowego: 8 bit, brak parzystości, 1 bit stopu.
+     
 ## Sposób Działania
 1. **Uruchomienie Urządzenia:**
    - Po włączeniu urządzenia użytkownik będzie mógł rozpocząć konfigurację zegarka. Aby to zrobić, powinien nacisnąć joystick na płytce.
