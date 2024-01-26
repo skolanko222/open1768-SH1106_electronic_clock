@@ -426,7 +426,7 @@ void drawDate(unsigned char * obrazek, unsigned char (*arrayOfigits[8])[16]){
 	
 }
 
-void drawTime(unsigned char * obrazek, unsigned char (*arrayOfigits[4])[32]){
+void drawTime(unsigned char * obrazek, unsigned char (*arrayOfigits[4])[32], unsigned char flagColon){
 	int startYBig = 84;
 	int startXBig = 20;
 	int digitWidthBig = 16;
@@ -434,8 +434,12 @@ void drawTime(unsigned char * obrazek, unsigned char (*arrayOfigits[4])[32]){
 	int spaceBig = 0;
 	drawArray(obrazek, startYBig - digitWidthBig*(liczBig++) - spaceBig, startXBig, 16, 32, arrayOfigits[0]);
 	drawArray(obrazek, startYBig - digitWidthBig*(liczBig++) - spaceBig, startXBig, 16, 32, arrayOfigits[1]);
-	drawArray(obrazek, startYBig - digitWidthBig*(liczBig) - spaceBig, startXBig, 16, 32, bigColon);
+	if(flagColon == 1)
+		drawArray(obrazek, startYBig - digitWidthBig*(liczBig) - spaceBig, startXBig, 16, 32, bigColon);
+	else
+		drawArray(obrazek, startYBig - digitWidthBig*(liczBig) - spaceBig, startXBig, 16, 32, bigBox);
 	spaceBig+=8;
+	
 	drawArray(obrazek, startYBig - digitWidthBig*(liczBig++) - spaceBig, startXBig, 16, 32, arrayOfigits[2]);
 	drawArray(obrazek, startYBig - digitWidthBig*(liczBig++) - spaceBig, startXBig, 16, 32, arrayOfigits[3]);
 	

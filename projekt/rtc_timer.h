@@ -7,8 +7,8 @@ void RTC_IRQHandler(void);
 void RTC_Configuration(void);
 void readDataTime();
 
-extern uint8_t date[8];
-extern uint8_t time[4];
+extern int8_t date[8];
+extern int8_t time[4];
 
 
 void enableRTC(void){
@@ -96,7 +96,7 @@ void setDateTime(){
 	uint8_t dom = date[0]*10 + date[1];	
 	uint8_t month = date[2]*10 + date[3];
 	uint16_t year = date[4]*1000 + date[5]*100 + date[6]*10 + date[7];
-	tempPrintInt(min); tempPrint(" "); tempPrintInt(hour); tempPrint("\r\n");
+	tempPrintInt(hour); tempPrint(" "); tempPrintInt(min); tempPrint("\r\n");
 		
 	LPC_RTC->SEC = 0;
 	LPC_RTC->MIN = min;

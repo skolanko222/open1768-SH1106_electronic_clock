@@ -19,7 +19,6 @@ void USART_Configuration(void){
 
 void tempPrint(const char * napis)
 {
-		//strcat(napis,"\r");
 		for(int i = 0; i < strlen(napis);i++){
 				
 				if(LPC_UART0->LSR >> 6 == 1){
@@ -33,7 +32,7 @@ void tempPrint(const char * napis)
 
 void tempPrintInt(int liczba)
 {
-    char napis[10];
+    char napis[16];
     sprintf(napis,"%d",liczba);
     tempPrint(napis);
 }

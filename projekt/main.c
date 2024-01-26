@@ -17,8 +17,8 @@ unsigned char (*bigDigits[10])[32] = {bigZero, bigOne, bigTwo, bigThree, bigFour
 unsigned char (*arrayOfTables[8])[16] = {smallZero,smallZero,smallZero,smallZero,smallZero,smallZero,smallZero,smallZero};
 unsigned char (*arrayOfTables2[4])[32] = {bigZero,bigZero,bigZero,bigZero};
 
-uint8_t date[8] = {2,7,1,1,2,0,2,3};
-uint8_t time[4] = {2,1,5,9};
+int8_t date[8] = {2,7,1,1,2,0,2,3};
+int8_t time[4] = {2,1,5,9};
 
 //uint64_t epoch;
 
@@ -60,7 +60,7 @@ int main(){
 	delay(200);
 	
 	drawDate(obrazek,arrayOfTables);
-	drawTime(obrazek, arrayOfTables2);
+	drawTime(obrazek, arrayOfTables2, 0);
 	
 	int configMode = 0; // 0: normal mode, 1: config mode
   int currentDigit = 0; // 0-11, liczba aktualnie edytowana
@@ -69,23 +69,21 @@ int main(){
   int whichNext = 0; // zmiana na nastepny element
   unsigned int originalValueSmall = 0;
 	unsigned int originalValueBig = 0;
+	unsigned char flagColon = 0;
 	
-	
-	//epoch = 1704380400;
-	//epoch = calc_epoch_from_date(date,time);
-	//calc_date_form_epoch(epoch,date,time);
-	
+		
 	char flag = 0;
 
 	OLED_display(obrazek);
 	while(1){
-				uint32_t state = Joystick_GetState();
-				delay(200);
+			uint32_t state = Joystick_GetState();
+			delay(165);
         if(configMode){
             // W config mode
 					
 						if(flag){
 							disableRTC();							
+							flagColon = 1;
 						}
 							
 						flag = 0;
@@ -141,6 +139,8 @@ int main(){
                     else if(currentDigit == 10){
                         time[currentDigit-8] = (time[currentDigit-8] + 1) % 6;
                     }
+										else if(currentDigit == 9 && time[0]== 2)
+                        time[currentDigit-8] = (time[currentDigit-8] + 1) % 4;
                     else {
                         time[currentDigit-8] = (time[currentDigit-8] + 1) % 10;
                     }
@@ -149,31 +149,28 @@ int main(){
             } else if(state == JOYSTICK_DOWN){
                 // Zmniejsz wartosc aktualnego elementu
                 if (currentDigit < 8){
-                    if(currentDigit == 0)
-                        date[currentDigit] = (date[currentDigit] - 1) % 4;
-                    else if(currentDigit == 2 || (currentDigit == 1 && date[0] == 3)){
-                        date[currentDigit] = (date[currentDigit] - 1) % 2;
-												if(date[currentDigit] == 255){
-													date[currentDigit]=1;/////////////////////////////////////////////// TUTAJ PACZEC
-												}
-												// char buf[80];
-												// sprintf(buf,"%d",date[currentDigit]);
-												// tempPrint(buf);
+                    if(currentDigit == 0){
+											date[currentDigit] = ((date[currentDigit] - 1) % 4) < 0 ? 4+((date[currentDigit] - 1) % 4) : ((date[currentDigit] - 1) % 4) ;
+										}
+											else if(currentDigit == 2 || (currentDigit == 1 && date[0] == 3)){
+                        date[currentDigit] = ((date[currentDigit] - 1) % 2) < 0 ? 2+((date[currentDigit] - 1) % 2) : ((date[currentDigit] - 1) % 2) ;
 										}
 										else if(currentDigit == 3 && date[2] == 1){
-                        date[currentDigit] = (date[currentDigit] - 1) % 3;
+                        date[currentDigit] = ((date[currentDigit] - 1) % 3) < 0 ? 3+((date[currentDigit] - 1) % 3) : ((date[currentDigit] - 1) % 3) ;
                     }
                     else 
-                        date[currentDigit] = (date[currentDigit] - 1) % 10;
+                        date[currentDigit] = ((date[currentDigit] - 1) % 10) < 0 ? 10+((date[currentDigit] - 1) % 10) : ((date[currentDigit] - 1) % 10);
                     arrayOfTables[currentDigit] = smallDigits[date[currentDigit]];
                 }
                 else {
                     if(currentDigit == 8)
-                        time[currentDigit-8] = (time[currentDigit-8] - 1) % 3;
+												time[currentDigit-8] = ((time[currentDigit-8] - 1) % 3) < 0 ? 3+((time[currentDigit-8] - 1) % 3) : ((time[currentDigit-8] - 1) % 3) ;
+										else if(currentDigit == 9 && time[0]== 2)
+                        time[currentDigit-8] = ((time[currentDigit-8] - 1) % 4) < 0 ? 4+((time[currentDigit-8] - 1) % 4) : ((time[currentDigit-8] - 1) % 4) ;
                     else if(currentDigit == 10)
-                        time[currentDigit-8] = (time[currentDigit-8] - 1) % 6;
+                         time[currentDigit-8] = ((time[currentDigit-8] - 1) % 6) < 0 ? 6+((time[currentDigit-8] - 1) % 6) : ((time[currentDigit-8] - 1) % 6) ;
                     else 
-                        time[currentDigit-8] = (time[currentDigit-8] - 1) % 10;
+                        time[currentDigit-8] = ((time[currentDigit-8] - 1) % 10) < 0 ? 10+((time[currentDigit-8] - 1) % 10) : ((time[currentDigit-8] - 1) % 10) ;
                     arrayOfTables2[currentDigit-8] = bigDigits[time[currentDigit-8]];
                 }
             }
@@ -183,11 +180,11 @@ int main(){
                 originalValueSmall = date[currentDigit];
             }
             else {
-                originalValueBig = time[currentDigit];
+                originalValueBig = time[currentDigit-8];
             }
 						
             // Niech cyfra miga co 500ms
-            if(pulseTicks > 500){ // Systick_Get() zwraca czas w ms
+            if(pulseTicks > 250){ // Systick_Get() zwraca czas w ms
 								pulseTicks = 0;
                 pulseState = 1 - pulseState; // Wlacz/wylacz migotanie
                 if(pulseState){
@@ -234,10 +231,15 @@ int main(){
 								arrayOfTables2[i-8]= bigDigits[time[i-8]];
 							}
 					}
+						if(pulseTicks > 420){ // Systick_Get() zwraca czas w ms
+								pulseTicks = 0;
+                flagColon = 1 - flagColon; // Wlacz/wylacz migotanie
+
+            }
         }
 				
         drawDate(obrazek,arrayOfTables);
-        drawTime(obrazek, arrayOfTables2);
+        drawTime(obrazek, arrayOfTables2, flagColon);
         OLED_display(obrazek); 
     }
 

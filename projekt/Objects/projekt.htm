@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\projekt.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\projekt.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6110004: Last Updated: Mon Jan  8 14:44:20 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6110004: Last Updated: Thu Jan 11 16:51:29 2024
 <BR><P>
-<H3>Maximum Stack Usage =        216 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        224 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; setDateTime &rArr; tempPrintInt &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 <P>
@@ -219,7 +219,7 @@ Global Symbols
 <P><STRONG><a name="[a0]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[45]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 224 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; setDateTime &rArr; tempPrintInt &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -707,8 +707,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawArray
 </UL>
 
-<P><STRONG><a name="[76]"></a>drawTime</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, main.o(.text.drawTime))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = drawTime &rArr; drawArray &rArr; drawPixel
+<P><STRONG><a name="[76]"></a>drawTime</STRONG> (Thumb, 126 bytes, Stack size 32 bytes, main.o(.text.drawTime))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = drawTime &rArr; drawArray &rArr; drawPixel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawArray
 </UL>
@@ -721,8 +721,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 1268 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 1372 bytes, Stack size 24 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 224 + Unknown Stack Size
 <LI>Call Chain = main &rArr; setDateTime &rArr; tempPrintInt &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDateTime
@@ -756,7 +756,7 @@ Global Symbols
 <LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[78]"></a>setDateTime</STRONG> (Thumb, 206 bytes, Stack size 56 bytes, main.o(.text.setDateTime))
+<P><STRONG><a name="[78]"></a>setDateTime</STRONG> (Thumb, 214 bytes, Stack size 56 bytes, main.o(.text.setDateTime))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = setDateTime &rArr; tempPrintInt &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
