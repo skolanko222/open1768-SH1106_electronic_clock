@@ -59,14 +59,13 @@ int main(){
 	OLED_init();
 	delay(200);
 	
-	drawDate(obrazek,arrayOfTables);
+	drawDate(obrazek, arrayOfTables);
 	drawTime(obrazek, arrayOfTables2, 0);
 	
 	int configMode = 0; // 0: normal mode, 1: config mode
-  int currentDigit = 0; // 0-11, liczba aktualnie edytowana
+  int currentDigit = 0; // 0-11, cyfra aktualnie edytowana
   int pulseState = 0; // 0: normal, 1: pulsing
   unsigned int pulseTime = 0; // Czas ostatniej zmiany stanu pulsowania
-  int whichNext = 0; // zmiana na nastepny element
   unsigned int originalValueSmall = 0;
 	unsigned int originalValueBig = 0;
 	unsigned char flagColon = 0;
@@ -231,7 +230,7 @@ int main(){
 								arrayOfTables2[i-8]= bigDigits[time[i-8]];
 							}
 					}
-						if(pulseTicks > 420){ // Systick_Get() zwraca czas w ms
+						if(pulseTicks > 420){ 
 								pulseTicks = 0;
                 flagColon = 1 - flagColon; // Wlacz/wylacz migotanie
 
